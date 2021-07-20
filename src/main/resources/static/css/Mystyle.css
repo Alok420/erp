@@ -1,0 +1,155 @@
+.sidebar{
+   margin: 0px;
+   padding: 0px;
+   list-style: none;
+}
+
+.tab-wrap  {
+   width: 100%;
+   list-style: none;
+   text-align: left;
+   padding: 0;
+   margin: 0 0 0 0px;
+   position: relative;
+   /*height: 600px;*/
+
+
+}
+.hide_showbtn *{
+   color: white;
+}
+/*----------------------------------------------alok sir css*/
+body *{
+   font-size: 12px;
+}
+
+.nav-tabs li {
+   padding: 10px 0px;
+
+}
+.nav-tabs li a{
+   text-align: center;
+   text-decoration: none;
+   background-color:#1560BD;
+   padding: 5px 15px;
+   margin: 0px;
+   border: thin solid #003366;
+   margin-right: 1px;
+   min-width: 105px;
+   text-align: center;
+   border-radius: 10px 10px 0px 0px;
+   color: black;
+   font-weight: bold;
+   color: white;
+}
+
+.nav-tabs li .active{
+   border: thin solid #003366!important;
+   background-color: #003366;
+   color: white;
+}
+#table63_paginate a{
+   background-color:#36eaa2!important;
+   color:#003366!important;
+}
+.dataTables_wrapper{
+
+}
+.dataTables_wrapper td,.dataTables_wrapper th{
+   background-color: #003366!important;
+   color: white!important;
+
+}
+
+.dataTables_wrapper label input,.dataTables_wrapper label{
+   margin: 0px!important;
+   padding: 0px!important;
+   display: inline!important;
+   line-height: 5px;
+   padding-bottom: 20px;
+   color: white;
+
+}
+
+.dataTables_wrapper .dt-buttons button,.dataTables_wrapper .dt-buttons button *,.current {
+   background-color:#36eaa2!important;
+   color:#003366!important;
+   padding: 2px;
+   border-radius: 5px;
+   font-size: 10px;
+
+}
+.dataTables_wrapper .dt-buttons{
+   padding-bottom: 20px;
+
+}
+table.dataTable tbody td,
+table.dataTable thead th,
+table.dataTable tfoot th
+{
+   padding: 0px 0px;
+
+}
+table.dataTable tbody td .btn-sm{
+   font-size: 12px;
+}
+#body {
+   position: relative;
+}
+ul.nav-pills {
+   /*top: 20px;*/
+   position: fixed;
+}
+div.col-8 div {
+   height:200px;
+}
+.text-white{
+   color: white;
+}
+#newbox>.btn{
+   padding: 2px!important;
+   margin-bottom: 10px;
+}
+#newbox *,.updatepopupbox *{
+   font-size: 10px;
+}
+#newbox input,.updatepopupbox input{
+   height: 30px;
+
+}
+.updatepopupbox .tab-content #formBox form{
+   padding: 5px;
+
+}
+.dataTables_info{
+   color: white!important;
+}
+.popuprightsidebar{
+   background-color: white;
+   margin: 0px;
+   padding: 0px;
+}
+.popuprightsidebar ul{
+   list-style: none;
+   margin: 2px;
+   padding: 0px;
+
+}
+.popuprightsidebar ul li{
+   margin: 0px!important;
+   padding: 5px;
+   font-size: 20px;
+   border-radius: 10px;
+   cursor: pointer;
+
+}
+.popuprightsidebar ul li:hover{
+   margin-bottom: 5px;
+   background-color: #36eaa2;
+   color: white;
+}
+/*---------------------------------------------------alok sir css end*/
+
+
+
+
