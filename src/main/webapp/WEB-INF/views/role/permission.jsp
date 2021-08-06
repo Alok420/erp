@@ -18,13 +18,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-          <%@include file="../common/header.jsp" %>
+        <%@include file="../common/header.jsp" %>
 
         <div class="container">
             <h1>Permissions</h1>
             <a href="/role/show" class="btn btn-success btn-sm"> << </a>
 
-            <form method="post" action="/permission/save">   
+            <form method="post" action="/permission/save" enctype="multipart/form-data">   
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Select Role</label>
+                    <select name="role_id" class="form-control">
+                        <c:forEach items="${roles}" var="role">
+                            <option value="${role.id}">${role.name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Select module</label>
                     <select class="form-control" name="type">
@@ -39,14 +48,38 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Select Role</label>
-                    <select name="role_id" class="form-control">
-                        <c:forEach items="${roles}" var="role">
-                            <option value="${role.id}">${role.name}</option>
-                        </c:forEach>
-                    </select>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Sub Module</th>
+                            <th>Create</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>view</th>
+                        </tr>
+                        <tr>
+                            <td>Main</td>
+                            <td><label><input name="main_create" type="checkbox"> Create </label></td>
+                            <td><label><input name="main_update" type="checkbox"> Update  </label></td>
+                            <td><label><input name="main_delete" type="checkbox"> Delete </label></td>
+                            <td><label><input name="main_view" type="checkbox"> View </label></td>
+                        </tr>
+                        <tr>
+                            <td>Level</td>
+                            <td><label><input name="level_create" type="checkbox"> Create </label></td>
+                            <td><label><input name="level_update" type="checkbox"> Update  </label></td>
+                            <td><label><input name="level_delete" type="checkbox"> Delete </label></td>
+                            <td><label><input name="level_view" type="checkbox"> View </label></td>
+                        </tr>
+                        <tr>
+                            <td>Form Data</td>
+                            <td><label><input name="formdata_create" type="checkbox"> Create </label></td>
+                            <td><label><input name="formdata_update" type="checkbox"> Update  </label></td>
+                            <td><label><input name="formdata_delete" type="checkbox"> Delete </label></td>
+                            <td><label><input name="formdata_view" type="checkbox"> View </label></td>
+                        </tr>
+                       
+                    </table>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <div>

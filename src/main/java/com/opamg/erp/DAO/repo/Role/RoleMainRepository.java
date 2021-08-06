@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opamg.erp.DAO.repo;
+package com.opamg.erp.DAO.repo.Role;
 
-import com.opamg.erp.beans.Permission;
-import com.opamg.erp.beans.MyRole;
-import java.util.List;
+import com.opamg.erp.beans.Role.RoleMain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,10 +14,8 @@ import org.springframework.stereotype.Repository;
  * @author acer
  */
 @Repository
-public interface PermissionRepository extends JpaRepository<Permission, Long> {
+public interface RoleMainRepository extends JpaRepository<RoleMain, Long> {
 
-    List<Permission> findByType(String type);
-
-    List<Permission> findByRole(MyRole role);
-
+    RoleMain findByName(String name);
+    RoleMain findTopByOrderByIdAsc();
 }

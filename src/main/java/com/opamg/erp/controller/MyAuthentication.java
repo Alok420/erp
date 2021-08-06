@@ -7,7 +7,7 @@ package com.opamg.erp.controller;
 
 import com.opamg.erp.DAO.repo.RoleRepository;
 import com.opamg.erp.DAO.repo.UserRepository;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import com.opamg.erp.beans.User;
 import java.util.HashSet;
 import java.util.Optional;
@@ -81,9 +81,9 @@ public class MyAuthentication {
       } else {
 	user.setPassword(encoder.encode(user.getPassword()));
 	user.setVerification("verified");
-	Optional<Role> rl = roleRepository.findById(1L);
-	Role role = (Role) rl.get();
-	Set<Role> hs = new HashSet<Role>();
+	Optional<MyRole> rl = roleRepository.findById(1L);
+	MyRole role = (MyRole) rl.get();
+	Set<MyRole> hs = new HashSet<MyRole>();
 	hs.add(role);
 	user.setRole(hs);
 	userRepository.save(user);

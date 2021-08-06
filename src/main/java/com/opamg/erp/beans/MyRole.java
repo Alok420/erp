@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author acer
  */
 @Entity
-public class Role {
+public class MyRole {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -27,10 +27,10 @@ public class Role {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    public Role() {
+    public MyRole() {
     }
 
-    public Role(String name, String description) {
+    public MyRole(String name, String description) {
         this.name = name;
         this.description = description;
     }

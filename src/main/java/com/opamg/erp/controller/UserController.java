@@ -7,7 +7,7 @@ package com.opamg.erp.controller;
 
 import com.opamg.erp.DAO.service.RoleService;
 import com.opamg.erp.DAO.service.UserService;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import com.opamg.erp.beans.User;
 import java.util.HashSet;
 import java.util.List;
@@ -96,8 +96,8 @@ public class UserController {
         user2.setContact(user.getContact());
         user2.setEmail(user.getEmail());
         List li = roleService.getRepository().findByName(role);
-        Role rol = (Role) li.get(0);
-        Set s = new HashSet<Role>();
+        MyRole rol = (MyRole) li.get(0);
+        Set s = new HashSet<MyRole>();
         s.add(rol);
         user2.setRole(s);
         userService.getRepository().save(user2);

@@ -5,7 +5,7 @@
  */
 package com.opamg.erp.DAO.repo;
 
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import com.opamg.erp.beans.User;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Repository;
  * @author acer
  */
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
+public interface RoleRepository extends JpaRepository<MyRole, Long> {
 
-    List<Role> findByName(String name);
+    List<MyRole> findByName(String name);
 
 }

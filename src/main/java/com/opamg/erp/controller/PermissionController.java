@@ -8,7 +8,7 @@ package com.opamg.erp.controller;
 import com.opamg.erp.DAO.service.PermissionService;
 import com.opamg.erp.DAO.service.RoleService;
 import com.opamg.erp.beans.Permission;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +32,7 @@ public class PermissionController {
 
         String type = req.getParameter("type");
         long role_id = Long.parseLong(req.getParameter("role_id"));
-        Role role = roleService.getRepository().getOne(role_id);
+        MyRole role = roleService.getRepository().getOne(role_id);
         Permission permission = new Permission(type, role);
         permissionService.insert(permission);
         return "redirect:/role/permission";

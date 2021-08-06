@@ -51,7 +51,7 @@ public class User {
     private String contact;
     
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    private Set<Role> role = new HashSet<Role>();
+    private Set<MyRole> role = new HashSet<MyRole>();
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
@@ -164,11 +164,11 @@ public class User {
         this.updated = updated;
     }
 
-    public Set<Role> getRole() {
+    public Set<MyRole> getRole() {
         return role;
     }
 
-    public void setRole(Set<Role> role) {
+    public void setRole(Set<MyRole> role) {
         this.role = role;
     }
 

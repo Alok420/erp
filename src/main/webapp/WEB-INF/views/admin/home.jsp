@@ -54,6 +54,7 @@
                         <a href="./../sprig/Dashboard?subid=${SubSprigMainService.getMainRepository().findTopByOrderByIdAsc().getId()}&id=${SprigMainService.getMainRepository().findTopByOrderByIdAsc().getId()}"><li class="list-item">Sprig</li></a>
                         <a href="./../leaf/Dashboard?id=${LeafMainService.getMainRepository().findTopByOrderByIdAsc().getId()}"><li class="list-item">Leaf</li></a>
                         <a href="./../flower/Dashboard?id=${FlowerMainService.getMainRepository().findTopByOrderByIdAsc().getId()}"><li class="list-item">Flower</li></a>
+                        <a href="./../role/Dashboard?id=${RoleMainService.getMainRepository().findTopByOrderByIdAsc().getId()}"><li class="list-item">Role</li></a>
                     </ul>
                 </div>
             </div>

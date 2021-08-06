@@ -10,6 +10,7 @@ import com.opamg.erp.DAO.service.Flower.FlowerMainService;
 import com.opamg.erp.DAO.service.Fruit.FruitMainService;
 import com.opamg.erp.DAO.service.Leaf.LeafMainService;
 import com.opamg.erp.DAO.service.MyBranch.MyBranchMainService;
+import com.opamg.erp.DAO.service.Role.RoleMainService;
 import com.opamg.erp.DAO.service.Root.RootMainService;
 import com.opamg.erp.DAO.service.Seed.SeedMainService;
 import com.opamg.erp.DAO.service.Sprig.SprigMainService;
@@ -46,6 +47,8 @@ public class AdminController {
   FruitMainService fruitMainService;
   @Autowired
   SeedMainService seedMainService;
+  @Autowired
+  RoleMainService roleMainService;
 //  --------------------------------------------------------------------------------sub services
   @Autowired
   SubSprigMainService subSprigMainService;
@@ -61,6 +64,7 @@ public class AdminController {
     modelAndView.addObject("FlowerMainService", flowerMainService);
     modelAndView.addObject("FruitMainService", fruitMainService);
     modelAndView.addObject("SeedMainService", seedMainService);
+    modelAndView.addObject("RoleMainService", roleMainService);
 //    ----------------------------------------------------------------------------------------------------------sub services
     modelAndView.addObject("SubSprigMainService", subSprigMainService);
     modelAndView.setViewName("admin/home");

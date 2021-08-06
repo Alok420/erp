@@ -8,7 +8,7 @@ package com.opamg.erp.controller;
 import com.opamg.erp.DAO.service.PermissionService;
 import com.opamg.erp.DAO.service.RoleService;
 import com.opamg.erp.DAO.service.UserService;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import com.opamg.erp.beans.User;
 import java.util.List;
 import java.util.Optional;
@@ -43,7 +43,7 @@ public class RoleController {
     UserService userService;
 
     @PostMapping("role/save")
-    ModelAndView registerUser(@Valid Role role, BindingResult br, ModelMap map) {
+    ModelAndView registerUser(@Valid MyRole role, BindingResult br, ModelMap map) {
         ModelAndView modelAndView = new ModelAndView();
 
         if (br.hasErrors()) {
@@ -56,15 +56,15 @@ public class RoleController {
             modelAndView.addObject("SuccessMessage", "User registered");
 
         }
-        modelAndView.addObject("role", new Role());
+        modelAndView.addObject("role", new MyRole());
         modelAndView.setViewName("role/form");
         return modelAndView;
     }
 
     @RequestMapping(value = "role/update", method = RequestMethod.GET)
     String fieldupdate(@RequestParam long id, Model map) {
-        Optional<Role> optional = roleService.getRepository().findById(id);
-        Role role = optional.get();
+        Optional<MyRole> optional = roleService.getRepository().findById(id);
+        MyRole role = optional.get();
         map.addAttribute("role", role);
         return "role/update";
     }
@@ -128,7 +128,7 @@ public class RoleController {
     }
 
     @PostMapping("role/update")
-    String roleUpdate(@Valid Role role, BindingResult br, ModelMap map) {
+    String roleUpdate(@Valid MyRole role, BindingResult br, ModelMap map) {
         System.err.println("-----------------------------------------" + role.toString());
         roleService.getRepository().save(role);
         return "redirect:/role/show";

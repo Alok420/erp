@@ -6,7 +6,7 @@
 package com.opamg.erp.DAO.service;
 
 import com.opamg.erp.DAO.repo.RoleRepository;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class RoleService {
         return repository;
     }
 
-    public void insert(Role r) {
+    public void insert(MyRole r) {
         repository.save(r);
     }
 

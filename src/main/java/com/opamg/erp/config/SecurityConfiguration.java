@@ -7,7 +7,7 @@ package com.opamg.erp.config;
 
 import com.opamg.erp.DAO.service.PermissionService;
 import com.opamg.erp.beans.Permission;
-import com.opamg.erp.beans.Role;
+import com.opamg.erp.beans.MyRole;
 import java.util.List;
 import java.util.ListIterator;
 import javax.sql.DataSource;
@@ -51,42 +51,42 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             Permission permission = (Permission) lit.next();
             switch (permission.getType().toLowerCase()) {
                 case "flower": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     flower += role.getName() + ",";
                     break;
                 }
                 case "fruit": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     fruit += role.getName() + ",";
                     break;
                 }
                 case "leaf": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     leaf += role.getName() + ",";
                     break;
                 }
                 case "mybranch": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     branch += role.getName() + ",";
                     break;
                 }
                 case "root": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     root += role.getName() + ",";
                     break;
                 }
                 case "sprig": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     sprig += role.getName() + ",";
                     break;
                 }
                 case "seed": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     seed += role.getName() + ",";
                     break;
                 }
                 case "trunk": {
-                    Role role = permission.getRole();
+                    MyRole role = permission.getRole();
                     trunk += role.getName() + ",";
                     break;
                 }
@@ -96,17 +96,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/").permitAll()
-                .antMatchers("/admin/home/**").permitAll()
-                .antMatchers("/role/**").hasAnyAuthority("Admin")
-                .antMatchers("/flower/**").hasAnyAuthority(flower.replaceAll(", $", ""))
-                .antMatchers("/fruit/**").hasAnyAuthority(fruit.replaceAll(", $", ""))
-                .antMatchers("/leaf/**").hasAnyAuthority(leaf.replaceAll(", $", ""))
-                .antMatchers("/mybranch/**").hasAnyAuthority(branch.replaceAll(", $", ""))
-                .antMatchers("/root/**").hasAnyAuthority(root.replaceAll(", $", ""))
-                .antMatchers("/seed/**").hasAnyAuthority(seed.replaceAll(", $", ""))
-                .antMatchers("/sprig/**").hasAnyAuthority(sprig.replaceAll(", $", ""))
-                .antMatchers("/trunk/**").hasAnyAuthority(trunk.replaceAll(", $", ""))
-                .anyRequest().authenticated()
+//                .antMatchers("/admin/home/**").permitAll()
+//                .antMatchers("/role/**").hasAnyAuthority("Admin")
+//                .antMatchers("/flower/**").hasAnyAuthority(flower.replaceAll(", $", ""))
+//                .antMatchers("/fruit/**").hasAnyAuthority(fruit.replaceAll(", $", ""))
+//                .antMatchers("/leaf/**").hasAnyAuthority(leaf.replaceAll(", $", ""))
+//                .antMatchers("/mybranch/**").hasAnyAuthority(branch.replaceAll(", $", ""))
+//                .antMatchers("/root/**").hasAnyAuthority(root.replaceAll(", $", ""))
+//                .antMatchers("/seed/**").hasAnyAuthority(seed.replaceAll(", $", ""))
+//                .antMatchers("/sprig/**").hasAnyAuthority(sprig.replaceAll(", $", ""))
+//                .antMatchers("/trunk/**").hasAnyAuthority(trunk.replaceAll(", $", ""))
+//                .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()
                 .and()

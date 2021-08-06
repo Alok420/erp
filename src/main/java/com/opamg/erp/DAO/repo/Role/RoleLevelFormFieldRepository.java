@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opamg.erp.DAO.repo;
+package com.opamg.erp.DAO.repo.Role;
 
-import com.opamg.erp.beans.Permission;
-import com.opamg.erp.beans.MyRole;
+import com.opamg.erp.beans.Role.RoleLevelForm;
+import com.opamg.erp.beans.Role.RoleLevelFormField;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,10 +16,7 @@ import org.springframework.stereotype.Repository;
  * @author acer
  */
 @Repository
-public interface PermissionRepository extends JpaRepository<Permission, Long> {
-
-    List<Permission> findByType(String type);
-
-    List<Permission> findByRole(MyRole role);
+public interface RoleLevelFormFieldRepository extends JpaRepository<RoleLevelFormField, Long> {
+    List<RoleLevelFormField> findByLevelForm(RoleLevelForm form);
 
 }

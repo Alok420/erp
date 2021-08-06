@@ -24,12 +24,12 @@ public class Permission {
     
     private String type;
     @OneToOne
-    private Role role;
+    private MyRole role;
 
     public Permission() {
     }
 
-    public Permission(String type, Role role) {
+    public Permission(String type, MyRole role) {
         this.type = type;
         this.role = role;
     }
@@ -50,11 +50,11 @@ public class Permission {
         this.type = type;
     }
 
-    public Role getRole() {
+    public MyRole getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(MyRole role) {
         this.role = role;
     }
 
